@@ -6,6 +6,9 @@ $beige:#f0efe9;
 $brown: #695356;
 
 
+
+
+
 body{
     margin: 0;
     display: flex;
@@ -310,11 +313,20 @@ main{
             padding-bottom: 20px;
             width: 80%;
 
-            li{
+            #list-active {
                 border-bottom: 1px solid lightgray;
                 height: 40px;
-                list-style: none;
-                vertical-align: middle;
+                display: flex;
+                align-items: center;
+            }
+
+            .list-disabled{
+                color: grey;
+                text-decoration: line-through;
+                border-bottom: 1px solid lightgray;
+                height: 40px;
+                display: flex;
+                align-items: center;
             }
         }
 
@@ -361,6 +373,7 @@ main{
 
 
 }
+
 
 @media screen and (min-width: 500px){
     main #wrapper #description #description-text #text p{
@@ -460,26 +473,13 @@ main{
         #to-do-wrapper{
             flex-direction: column;
             width: 60%;
-            position: relative; 
-            margin-bottom: 60px;       
-    
+         
             #to-do-list{
-                
-                margin: 0 auto;
-                padding-bottom: 20px;
-
-                li{
-                    border-bottom: 1px solid lightgray;
-                    height: 40px;
-                    display: flex;
-                    align-items: center;
-
-                }
 
                 li:hover{
-                    text-decoration: line-through;
-                    color: grey;
-                    cursor: pointer;
+                    text-decoration: line-through !important;
+                    color: grey !important;
+                    cursor: pointer !important;
                 }
 
             }

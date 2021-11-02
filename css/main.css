@@ -361,11 +361,28 @@ main #to-do-wrapper #to-do-list {
   width: 80%;
 }
 
-main #to-do-wrapper #to-do-list li {
+main #to-do-wrapper #to-do-list #list-active {
   border-bottom: 1px solid lightgray;
   height: 40px;
-  list-style: none;
-  vertical-align: middle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #to-do-wrapper #to-do-list .list-disabled {
+  color: grey;
+  text-decoration: line-through;
+  border-bottom: 1px solid lightgray;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main #to-do-wrapper #adjust-table {
@@ -506,27 +523,11 @@ main #to-do-wrapper #plus-container #plus {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 60%;
-    position: relative;
-    margin-bottom: 60px;
-  }
-  main #to-do-wrapper #to-do-list {
-    margin: 0 auto;
-    padding-bottom: 20px;
-  }
-  main #to-do-wrapper #to-do-list li {
-    border-bottom: 1px solid lightgray;
-    height: 40px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   main #to-do-wrapper #to-do-list li:hover {
-    text-decoration: line-through;
-    color: grey;
-    cursor: pointer;
+    text-decoration: line-through !important;
+    color: grey !important;
+    cursor: pointer !important;
   }
   main #to-do-wrapper #adjust-table #sortList, main #to-do-wrapper #adjust-table #deleteList {
     width: 20%;
