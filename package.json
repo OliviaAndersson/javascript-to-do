@@ -1,0 +1,19 @@
+{
+  "name": "javascript-1st",
+  "version": "1.0.0",
+  "description": "Första inlämningsuppgiften i kursen: javaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OliviaAndersson/javascript-to-do.git"
+  },
+  "author": "Olivia Andersson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OliviaAndersson/javascript-to-do/issues"
+  },
+  "homepage": "https://github.com/OliviaAndersson/javascript-to-do#readme"
+}
