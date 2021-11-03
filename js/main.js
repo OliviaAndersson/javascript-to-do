@@ -13,14 +13,6 @@ window.onload = function(){
 
     let addButton = document.getElementById("addButton");
     addButton.addEventListener("click", createElementInToDo);
-
-    // let changeFromActive = document.getElementById("list-active");
-    // changeFromActive.addEventListener("click", changeFromActiveToDisabled);
-
-    // let changeFromDisabled = document.getElementById("list-disabled");
-    // changeFromDisabled = document.addEventListener("click", changeFromDisabledToActive);
-
-
 }
 
 let listNumber = 0;
@@ -68,26 +60,21 @@ function  createElementInToDo(){
 
         for (let i = 0; i < toDoList.length; i++) {
             createElement.id = "list-active";
+            createElement.className = "class";
             createElement.innerHTML = addToList.value;
             ulList.appendChild(createElement);        
         }
-    
+
         document.getElementById("addToList").value = "";
         console.log(toDoList);
 
-        document.getElementById("list-active").addEventListener("click", changeFromActiveToDisabled);
-
-        function changeFromActiveToDisabled(ev){
-            console.log(ev);
-            if (ev.target.localName === "li") {
-                ev.target.classList.toggle("list-disabled");
-            }
-
-            else{}
-
-        }
-
+        document.querySelectorAll(".class").forEach(items => {
+        items.addEventListener("click", changeBetweenActiveDisabled)})
     }
-
-  
 }
+
+function changeBetweenActiveDisabled(ev){
+    ev.target.classList.toggle("list-disabled");                 
+}
+
+
