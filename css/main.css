@@ -10,7 +10,7 @@ body {
   gap: 130px;
   font-family: "Rubik", sans-serif;
   position: relative;
-  background-color: #f0efe9;
+  background-color: #f0ecea;
 }
 
 #arrow {
@@ -31,7 +31,7 @@ header {
 header nav {
   width: 100%;
   height: 10vh;
-  background-color: #f0efe9;
+  background-color: #f0ecea;
   position: relative;
 }
 
@@ -128,8 +128,8 @@ header nav #phone #hamburger-wrapper #hamburger-menu #cross {
 }
 
 header nav #phone #hamburger-wrapper #hamburger-menu #name {
-  background-color: #255f63;
-  color: #fbc9be;
+  background-color: #5d7b6f;
+  color: #f0ecea;
   padding: 5%;
   margin: 0 auto;
 }
@@ -180,8 +180,8 @@ header #hero {
 }
 
 header #hero #name {
-  background-color: #255f63;
-  color: #fbc9be;
+  background-color: #5d7b6f;
+  color: #f0ecea;
   width: 350px;
   height: 10vh;
   position: relative;
@@ -282,8 +282,8 @@ main #input-box {
   width: 95%;
   height: 35vh;
   margin: 0 auto;
-  background-color: #695356;
-  color: #fbc9be;
+  background-color: #785964;
+  color: #f0ecea;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -341,27 +341,43 @@ main #input-box #js #addButton {
   font-size: 12pt;
 }
 
-main #to-do-wrapper {
+main #wrappers {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #to-do-wrapper, main #done-wrapper {
   width: 80%;
-  margin: 0 auto;
   background-color: #fff;
   position: relative;
   margin-bottom: 60px;
 }
 
-main #to-do-wrapper h1 {
+main #to-do-wrapper h1, main #done-wrapper h1 {
   font-size: 18pt;
   padding: 10px;
   text-align: center;
 }
 
-main #to-do-wrapper #to-do-list {
+main #to-do-wrapper #to-do-list, main #to-do-wrapper #done-list, main #done-wrapper #to-do-list, main #done-wrapper #done-list {
   margin: 0 auto;
-  padding-bottom: 20px;
   width: 80%;
+  margin-bottom: 60px;
 }
 
-main #to-do-wrapper #to-do-list #list-active {
+main #to-do-wrapper #to-do-list #list-active, main #to-do-wrapper #done-list #list-active, main #done-wrapper #to-do-list #list-active, main #done-wrapper #done-list #list-active {
   border-bottom: 1px solid lightgray;
   height: 40px;
   display: -webkit-box;
@@ -370,9 +386,16 @@ main #to-do-wrapper #to-do-list #list-active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
-main #to-do-wrapper #to-do-list .list-disabled {
+main #to-do-wrapper #to-do-list #list-active #cross, main #to-do-wrapper #done-list #list-active #cross, main #done-wrapper #to-do-list #list-active #cross, main #done-wrapper #done-list #list-active #cross {
+  color: black;
+  position: absolute;
+  right: 0;
+}
+
+main #to-do-wrapper #to-do-list .list-disabled, main #to-do-wrapper #done-list .list-disabled, main #done-wrapper #to-do-list .list-disabled, main #done-wrapper #done-list .list-disabled {
   color: grey;
   text-decoration: line-through;
   border-bottom: 1px solid lightgray;
@@ -383,9 +406,10 @@ main #to-do-wrapper #to-do-list .list-disabled {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
-main #to-do-wrapper #adjust-table {
+main #to-do-wrapper #adjust-table, main #done-wrapper #adjust-table {
   margin: 0 auto;
   width: 80%;
   display: -webkit-box;
@@ -398,25 +422,26 @@ main #to-do-wrapper #adjust-table {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  padding-bottom: 60px;
 }
 
-main #to-do-wrapper #adjust-table #sortList, main #to-do-wrapper #adjust-table #deleteList {
-  width: 40%;
+main #to-do-wrapper #adjust-table #sort-todo-list, main #to-do-wrapper #adjust-table #deleteList, main #done-wrapper #adjust-table #sort-todo-list, main #done-wrapper #adjust-table #deleteList {
+  width: 70%;
   border-radius: 5px;
   border: none;
   text-transform: uppercase;
   font-family: "Rubik", sans-serif;
   font-size: 12pt;
   height: 5vh;
-  background-color: #fbc9be;
+  background-color: #f0ecea;
 }
 
-main #to-do-wrapper a {
+main #to-do-wrapper a, main #done-wrapper a {
   text-decoration: none;
   color: white;
 }
 
-main #to-do-wrapper #plus-container {
+main #to-do-wrapper #plus-container, main #done-wrapper #plus-container {
   position: relative;
   width: 100%;
   display: -webkit-box;
@@ -427,14 +452,18 @@ main #to-do-wrapper #plus-container {
           align-items: center;
 }
 
-main #to-do-wrapper #plus-container #plus {
+main #to-do-wrapper #plus-container #plus, main #done-wrapper #plus-container #plus {
   padding: 15px;
-  position: relative;
-  top: 30px;
-  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 50%;
   font-size: 20pt;
-  background-color: #255f63;
+  background-color: #5d7b6f;
   border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 @media screen and (min-width: 500px) {
@@ -517,20 +546,22 @@ main #to-do-wrapper #plus-container #plus {
     width: 12%;
     height: 5vh;
   }
-  main #to-do-wrapper {
-    -webkit-box-orient: vertical;
+  main #wrappers {
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 60%;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
-  main #to-do-wrapper #to-do-list li:hover {
+  main #wrappers #to-do-wrapper, main #wrappers #done-wrapper {
+    width: 40%;
+  }
+  main #wrappers #to-do-wrapper #to-do-list li:hover, main #wrappers #to-do-wrapper #done-list li:hover, main #wrappers #done-wrapper #to-do-list li:hover, main #wrappers #done-wrapper #done-list li:hover {
     text-decoration: line-through !important;
     color: grey !important;
     cursor: pointer !important;
   }
-  main #to-do-wrapper #adjust-table #sortList, main #to-do-wrapper #adjust-table #deleteList {
-    width: 20%;
+  main #wrappers #to-do-wrapper #adjust-table #sort-todo-list, main #wrappers #to-do-wrapper #adjust-table #deleteList, main #wrappers #done-wrapper #adjust-table #sort-todo-list, main #wrappers #done-wrapper #adjust-table #deleteList {
+    cursor: pointer !important;
   }
 }
 /*# sourceMappingURL=main.css.map */

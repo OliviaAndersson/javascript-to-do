@@ -1,12 +1,9 @@
 $head-font: 'Rubik', sans-serif;
 $bread-font: 'Rubik', sans-serif;
-$blue: #255f63;
-$pink: #fbc9be;
-$beige:#f0efe9;
-$brown: #695356;
-
-
-
+$blue: #5d7b6f;
+$pink: #f0ecea;
+$beige:#f0ecea;
+$brown: #785964;
 
 
 body{
@@ -17,9 +14,6 @@ body{
     font-family: $bread-font;
     position: relative;
     background-color: $beige;
-    ;
-
-    
 }
 
 #arrow{
@@ -36,7 +30,7 @@ body{
 header{
     width: 100%;
 
-    nav{ //Desktop
+    nav{ 
         width: 100%;
         height: 10vh;
         background-color: $beige;
@@ -295,12 +289,19 @@ main{
         }
     }
 
-    #to-do-wrapper{
+    #wrappers{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #to-do-wrapper, #done-wrapper{
         width: 80%;
-        margin: 0 auto;
         background-color: #fff;
         position: relative; 
-        margin-bottom: 60px;  
+        margin-bottom: 60px;
         
         h1{
             font-size: 18pt;
@@ -308,16 +309,24 @@ main{
             text-align: center;
         }
 
-        #to-do-list{
+        #to-do-list, #done-list{
             margin: 0 auto;
-            padding-bottom: 20px;
             width: 80%;
+            margin-bottom: 60px;
 
             #list-active {
                 border-bottom: 1px solid lightgray;
                 height: 40px;
                 display: flex;
                 align-items: center;
+                position: relative;
+
+                #cross {
+                    color: black;
+                    position: absolute;
+                    right: 0;
+    
+                }
             }
 
             .list-disabled{
@@ -327,6 +336,7 @@ main{
                 height: 40px;
                 display: flex;
                 align-items: center;
+                cursor: pointer;
             }
         }
 
@@ -336,9 +346,11 @@ main{
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
+            padding-bottom: 60px;
+            
 
-            #sortList, #deleteList{
-                width: 40%;
+            #sort-todo-list, #deleteList{
+                width: 70%;
                 border-radius: 5px;
                 border: none;
                 text-transform: uppercase;
@@ -360,12 +372,15 @@ main{
 
             #plus{
                 padding: 15px;
-                position: relative;
-                top: 30px;
-                margin: 0 auto;
+                position: absolute;
+                top: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                left: 50%;
                 font-size: 20pt;
                 background-color: $blue;
                 border-radius: 50%;
+                transform: translate(-50%, -50%);
             }
 
         }
@@ -469,27 +484,31 @@ main{
                 }
             }
         }
+        #wrappers{
+            flex-direction: row;
+        
+            #to-do-wrapper, #done-wrapper{
+                width: 40%;
+            
+                #to-do-list, #done-list{
 
-        #to-do-wrapper{
-            flex-direction: column;
-            width: 60%;
-         
-            #to-do-list{
+                    li:hover{
+                        text-decoration: line-through !important;
+                        color: grey !important;
+                        cursor: pointer !important;
+                    }
 
-                li:hover{
-                    text-decoration: line-through !important;
-                    color: grey !important;
-                    cursor: pointer !important;
                 }
+        
+                #adjust-table{
 
-            }
-    
-            #adjust-table{
-
-                #sortList, #deleteList{
-                    width: 20%;
+                    #sort-todo-list, #deleteList{
+                        cursor: pointer !important;
+                    }
                 }
             }
         }
     }
 }
+
+    
