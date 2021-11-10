@@ -29,7 +29,6 @@ window.onload = function(){
 }
 
 let toDoList = ["Träna", "Städa", "Laga mat"];
-// let toDoList = [];
 let doneList = [];
 let listNumber = 0;
 
@@ -95,7 +94,7 @@ function createToDoElements(){
         ulList.appendChild(createElement);    
     }
 
-    //Nu blir alla element klickbara & vid klick triggas funktionen toDoToDone
+    //Nu blir värderna klickbara & vid klick triggas funktionen toDoToDone
     document.querySelectorAll(".class").forEach(items => {
         items.addEventListener("click", toDoToDone)})
 }
@@ -111,7 +110,7 @@ function toDoToDone(e){
         toDoList.splice(index, 1);
     }
 
-    //Pusha från TO-DO till avklarad-listan       
+    //Pusha från värdet till avklarad-listan       
     let ulDoneList = document.getElementById("done-list");
 
     doneList.push(e.target.innerHTML);
@@ -128,7 +127,7 @@ function toDoToDone(e){
         ulDoneList.appendChild(createDeletedElement);    
     }
 
-    //Nu blir den klickbar & vid klick triggas funktionen doneToToDo
+    //Nu blir värderna klickbara & vid klick triggas funktionen doneToToDo
     document.querySelectorAll(".list-disabled").forEach(items => {
     items.addEventListener("click", doneToToDo)})
    
@@ -149,7 +148,8 @@ function doneToToDo(e){
     //Pushar värdet från doneList till toDoList
     toDoList.push(e.target.innerHTML);
 
-    createToDoElements(e);
+    //Startar funktionen createToDoElements som kommer skapa HTML-element av värdet
+    createToDoElements();
 }
 
 function sortToDoList(){
@@ -204,7 +204,7 @@ function deleteList(){
         
     }
 
-    //Nu blir den klickbar & vid klick triggas funktionen toDotoDone
+    //Nu blir alla värden klickbara & vid klick triggas funktionen toDotoDone
     document.querySelectorAll(".class").forEach(items => {
         items.addEventListener("click", toDoToDone)})
 
