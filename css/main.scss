@@ -1,10 +1,10 @@
 $head-font: 'Rubik', sans-serif;
 $bread-font: 'Rubik', sans-serif;
-$blue: #255f63;
-$pink: #fbc9be;
-$beige:#f0efe9;
-$brown: #695356;
-
+$button: #9B7874;
+$name: #9B7874;
+$beige:#f0ecea;
+$input: #2B4F3C;
+$border: 2px solid #D33E43;
 
 body{
     margin: 0;
@@ -14,9 +14,6 @@ body{
     font-family: $bread-font;
     position: relative;
     background-color: $beige;
-    ;
-
-    
 }
 
 #arrow{
@@ -33,7 +30,7 @@ body{
 header{
     width: 100%;
 
-    nav{ //Desktop
+    nav{ 
         width: 100%;
         height: 10vh;
         background-color: $beige;
@@ -86,20 +83,18 @@ header{
 
                 #hamburger-menu{
                     display: none;
-                    width: 80%;
+                    width: 100%;
                     height: 100vh;
-                    background-color: white;
+                    background-color: $beige;
                     position: fixed;
                     top: 0;
                     left: 0;
-                    z-index: 50;
+                    z-index: 1000;
                     margin: 0;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: space-evenly;
-                    border-radius: 0px 30px 30px 0px;
-                    border: 2px solid #db7b65;
 
                     #cross{
                         font-size: 30px;
@@ -107,8 +102,8 @@ header{
                     }
 
                     #name{
-                        background-color: $blue;
-                        color: $pink;
+                        background-color: $name;
+                        color: $beige;
                         padding: 5%;
                         margin: 0 auto;
                         
@@ -160,8 +155,8 @@ header{
         background-position: center;
 
         #name{
-            background-color: $blue;
-            color: $pink;
+            background-color: $name;
+            color: $beige;
             width: 350px;
             height: 10vh;
             position: relative;
@@ -209,7 +204,7 @@ main{
 
         #description{
             width: 95%;
-            border: 2px solid #db7b65;
+            border: $border;
             position: relative;
             
             #description-text{
@@ -247,8 +242,8 @@ main{
         width: 95%;
         height: 35vh;
         margin: 0 auto;
-        background-color: $brown;
-        color: $pink;
+        background-color: $input;
+        color: $beige;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -292,12 +287,19 @@ main{
         }
     }
 
-    #to-do-wrapper{
+    #wrappers{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #to-do-wrapper, #done-wrapper{
         width: 80%;
-        margin: 0 auto;
         background-color: #fff;
         position: relative; 
-        margin-bottom: 60px;  
+        margin-bottom: 60px;
         
         h1{
             font-size: 18pt;
@@ -305,16 +307,35 @@ main{
             text-align: center;
         }
 
-        #to-do-list{
+        #to-do-list, #done-list{
             margin: 0 auto;
-            padding-bottom: 20px;
-            width: 80%;
+            width: 75%;
+            margin-bottom: 60px;
+            padding-left: 0;
 
-            li{
+            #list-active {
                 border-bottom: 1px solid lightgray;
                 height: 40px;
-                list-style: none;
-                vertical-align: middle;
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                #cross {
+                    color: black;
+                    position: absolute;
+                    right: 0;
+    
+                }
+            }
+
+            .list-disabled{
+                color: grey;
+                text-decoration: line-through;
+                border-bottom: 1px solid lightgray;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
             }
         }
 
@@ -324,22 +345,26 @@ main{
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
+            padding-bottom: 60px;
+            
 
-            #sortList, #deleteList{
-                width: 40%;
+            #sort-todo-list, #deleteList{
+                width: 70%;
                 border-radius: 5px;
                 border: none;
                 text-transform: uppercase;
                 font-family: $bread-font;
                 font-size: 12pt;
                 height: 5vh;
-                background-color: $pink;
+                background-color: $beige;
             }
         }
+
         a{
             text-decoration: none;
             color: white;
         }
+        
         #plus-container{
             position: relative;
             width: 100%;
@@ -348,12 +373,15 @@ main{
 
             #plus{
                 padding: 15px;
-                position: relative;
-                top: 30px;
-                margin: 0 auto;
+                position: absolute;
+                top: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                left: 50%;
                 font-size: 20pt;
-                background-color: $blue;
+                background-color: $button;
                 border-radius: 50%;
+                transform: translate(-50%, -50%);
             }
 
         }
@@ -361,6 +389,7 @@ main{
 
 
 }
+
 
 @media screen and (min-width: 500px){
     main #wrapper #description #description-text #text p{
@@ -381,30 +410,30 @@ main{
             justify-content: space-evenly;
             height: 100%;
 
-            li{
-                display: inline;
-                position: relative;
-                top: 60%;
+                li{
+                    display: inline;
+                    position: relative;
+                    top: 60%;
 
-                a{
-                    text-decoration: none;
-                    color: black;
+                    a{
+                        text-decoration: none;
+                        color: black;
 
+                        
+                    }
+
+                    a:hover{
+                        border-bottom: 2px solid $input;
+                    }
                     
                 }
 
-                a:hover{
-                    border-bottom: 2px solid #255f63;
+                #head-text{
+                    font-family: 'Shadows Into Light', cursive;
+                    font-size: 30pt;
+                    top: 40%;
+                    text-transform: uppercase;
                 }
-                
-            }
-
-            #head-text{
-                font-family: 'Shadows Into Light', cursive;
-                font-size: 30pt;
-                top: 40%;
-                text-transform: uppercase;
-            }
             }
 
             #phone{
@@ -438,12 +467,10 @@ main{
         #input-box{
             width: 80%;
             height: 25vh;
-            margin: 0 auto;
     
             #js{
                 flex-direction: row;
                 justify-content: space-evenly;
-                width: 100%;
     
                 #addToList{
                     width: 70%;
@@ -457,39 +484,31 @@ main{
             }
         }
 
-        #to-do-wrapper{
-            flex-direction: column;
-            width: 60%;
-            position: relative; 
-            margin-bottom: 60px;       
-    
-            #to-do-list{
-                
-                margin: 0 auto;
-                padding-bottom: 20px;
+        #wrappers{
+            flex-direction: row;
+        
+            #to-do-wrapper, #done-wrapper{
+                width: 40%;
+            
+                #to-do-list, #done-list{
 
-                li{
-                    border-bottom: 1px solid lightgray;
-                    height: 40px;
-                    display: flex;
-                    align-items: center;
+                    li:hover{
+                        text-decoration: line-through !important;
+                        color: grey !important;
+                        cursor: pointer !important;
+                    }
 
                 }
+        
+                #adjust-table{
 
-                li:hover{
-                    text-decoration: line-through;
-                    color: grey;
-                    cursor: pointer;
-                }
-
-            }
-    
-            #adjust-table{
-
-                #sortList, #deleteList{
-                    width: 20%;
+                    #sort-todo-list, #deleteList{
+                        cursor: pointer !important;
+                    }
                 }
             }
         }
     }
 }
+
+    

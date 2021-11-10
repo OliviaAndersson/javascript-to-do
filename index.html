@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Rubik&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ff901abd43.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <title>To Do-list</title>
@@ -30,7 +30,7 @@
                 <div id="header-text">
                     <h1>Olivias hjälpsida</h1>
                 </div>
-           
+
                 <div id="hamburger-wrapper">
                     <div id="hamburger-menu">
                         <i class="fas fa-times" id="cross"></i>
@@ -40,7 +40,7 @@
                         <ul>
                             <li id="menu-option-one"><a href="#wrapper">Hur gör jag?</a></li>
                             <li id="menu-option-two"><a href="#input-box">Skapa</a></li>
-                            <li id="menu-option-three"><a href="#table-wrapper">Din lista</a></li>
+                            <li id="menu-option-three"><a href="#to-do-wrapper">Din lista</a></li>
                             <li id="menu-option-four"><a href="#">Nästa: Kalender</a></li>
                         </ul>
                     </div>
@@ -62,15 +62,16 @@
                 <div id="description-text">
                     <div id="text">
                         <h1>Hur gör jag?</h1>
-                        <p>Glömmer du ofta bort  vad du ska göra? Då är denna sida perfekt för dig!
+                        <p>Glömmer du ofta bort vad du ska göra? Då är denna sida perfekt för dig!
                             Börja med att lägga till aktiviteter i din To Do-lista nedan.
-                            Har du avklarat något på din lista, tryck på aktiviteten och 
-                            den kommer att markeras som avklarad. Om du sedan vill sortera 
-                            dina aktiviteter efter bokstavsordningtrycker du på knappen: 
+                            Har du avklarat något på din lista, tryck på aktiviteten och
+                            den kommer att markeras som avklarad. Om du ångrar dig är det bara att 
+                            klicka på aktiviten i den avklarade listan och den flyttas över till din 
+                            to-do. Vill du sedan sorter dina aktiviteter efter bokstavsordning trycker du på knappen:
                             Sortera. Har du avklarat allt (Grattis!) eller känner för att starta om
                             tryck på knappen: Rensa allt.
                         </p>
-                                             
+
                     </div>
                 </div>
             </div>
@@ -82,27 +83,42 @@
                 <button id="addButton">Lägg till</button>
             </div>
         </div>
-        <div id="to-do-wrapper">
-            <!-- if input lista = 0, display none -->
-            <h1>TO DO</h1>
-            <ul id="to-do-list"> 
-                    <!-- Här adderas javascriptet i form av <li></li> -->
-                    <li>Hej</li>
-                    <li>Hej</li>
-                    <li>Hej</li>
-                    <li>Hej</li>
-            </ul>
-            <div id="adjust-table">
-                <button id="sortList">Sortera</button>
-                <button id="deleteList">Rensa allt</button>
-            </div>
-            <a href="#input-box">
-                <div id="plus-container">
-                    <i class="fas fa-plus" id="plus"></i>
+        <div id="wrappers">
+            <div id="to-do-wrapper">
+                <h1>TO DO</h1>
+                <div id="list-wrapper">
+                    <ul id="to-do-list">
+                        <li id="list-active" class="class">Träna</li>
+                        <li id="list-active" class="class">Städa</li>
+                        <li id="list-active" class="class">Laga mat</li>
+
+                    </ul>
                 </div>
-            </a>
+                <div id="adjust-table">
+                    <button id="sort-todo-list">Sortera</button>
+                </div>
+                <a href="#input-box">
+                    <div id="plus-container">
+                        <i class="fas fa-plus" id="plus"></i>
+                    </div>
+                </a>
+            </div>
+            <div id="done-wrapper">
+                <h1>AVKLARAD</h1>
+                    <ul id="done-list">
+                    </ul>
+                <div id="adjust-table">
+                    <button id="deleteList">Rensa allt</button>
+                </div>
+                <a href="#input-box">
+                    <div id="plus-container">
+                        <i class="fas fa-plus" id="plus"></i>
+                    </div>
+                </a>
+            </div>
         </div>
+        
     </main>
- 
+
 </body>
 </html>

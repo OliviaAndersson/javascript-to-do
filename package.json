@@ -9,11 +9,13 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OliviaAndersson/javascript-to-do.git"
+    
   },
   "author": "Olivia Andersson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/OliviaAndersson/javascript-to-do/issues"
+    
   },
   "homepage": "https://github.com/OliviaAndersson/javascript-to-do#readme"
 }
