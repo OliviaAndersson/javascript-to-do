@@ -98,13 +98,13 @@ header nav #phone #hamburger-wrapper {
 
 header nav #phone #hamburger-wrapper #hamburger-menu {
   display: none;
-  width: 80%;
+  width: 100%;
   height: 100vh;
-  background-color: white;
+  background-color: #f0ecea;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: 1000;
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -119,8 +119,6 @@ header nav #phone #hamburger-wrapper #hamburger-menu {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  border-radius: 0px 30px 30px 0px;
-  border: 2px solid #db7b65;
 }
 
 header nav #phone #hamburger-wrapper #hamburger-menu #cross {
@@ -128,7 +126,7 @@ header nav #phone #hamburger-wrapper #hamburger-menu #cross {
 }
 
 header nav #phone #hamburger-wrapper #hamburger-menu #name {
-  background-color: #5d7b6f;
+  background-color: #9B7874;
   color: #f0ecea;
   padding: 5%;
   margin: 0 auto;
@@ -180,7 +178,7 @@ header #hero {
 }
 
 header #hero #name {
-  background-color: #5d7b6f;
+  background-color: #9B7874;
   color: #f0ecea;
   width: 350px;
   height: 10vh;
@@ -246,7 +244,7 @@ main #wrapper #image-container::after {
 
 main #wrapper #description {
   width: 95%;
-  border: 2px solid #db7b65;
+  border: 2px solid #D33E43;
   position: relative;
 }
 
@@ -282,7 +280,7 @@ main #input-box {
   width: 95%;
   height: 35vh;
   margin: 0 auto;
-  background-color: #785964;
+  background-color: #2B4F3C;
   color: #f0ecea;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -373,8 +371,9 @@ main #to-do-wrapper h1, main #done-wrapper h1 {
 
 main #to-do-wrapper #to-do-list, main #to-do-wrapper #done-list, main #done-wrapper #to-do-list, main #done-wrapper #done-list {
   margin: 0 auto;
-  width: 80%;
+  width: 75%;
   margin-bottom: 60px;
+  padding-left: 0;
 }
 
 main #to-do-wrapper #to-do-list #list-active, main #to-do-wrapper #done-list #list-active, main #done-wrapper #to-do-list #list-active, main #done-wrapper #done-list #list-active {
@@ -460,7 +459,7 @@ main #to-do-wrapper #plus-container #plus, main #done-wrapper #plus-container #p
   margin-right: auto;
   left: 50%;
   font-size: 20pt;
-  background-color: #5d7b6f;
+  background-color: #9B7874;
   border-radius: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -497,7 +496,7 @@ main #to-do-wrapper #plus-container #plus, main #done-wrapper #plus-container #p
     color: black;
   }
   header nav #desktop li a:hover {
-    border-bottom: 2px solid #255f63;
+    border-bottom: 2px solid #2B4F3C;
   }
   header nav #desktop #head-text {
     font-family: 'Shadows Into Light', cursive;
@@ -526,7 +525,6 @@ main #to-do-wrapper #plus-container #plus, main #done-wrapper #plus-container #p
   main #input-box {
     width: 80%;
     height: 25vh;
-    margin: 0 auto;
   }
   main #input-box #js {
     -webkit-box-orient: horizontal;
@@ -536,7 +534,6 @@ main #to-do-wrapper #plus-container #plus, main #done-wrapper #plus-container #p
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    width: 100%;
   }
   main #input-box #js #addToList {
     width: 70%;

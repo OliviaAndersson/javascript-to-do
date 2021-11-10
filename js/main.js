@@ -17,9 +17,6 @@ window.onload = function(){
     let sortToDoButton = document.getElementById("sort-todo-list");
     sortToDoButton.addEventListener("click", sortToDoList);
 
-    // let sortDoneButton = document.getElementById("sort-done-list");
-    // sortDoneButton.addEventListener("click", sortDoneList);
-
     let deleteButton = document.getElementById("deleteList");
     deleteButton.addEventListener("click", deleteList);
 
@@ -33,7 +30,7 @@ window.onload = function(){
 
 let toDoList = ["Träna", "Städa", "Laga mat"];
 // let toDoList = [];
-let doneList = ["Tanka bilen"];
+let doneList = [];
 let listNumber = 0;
 
 function createMenu(){
@@ -97,6 +94,10 @@ function createToDoElements(){
 
         ulList.appendChild(createElement);    
     }
+
+    //Nu blir alla element klickbara & vid klick triggas funktionen toDoToDone
+    document.querySelectorAll(".class").forEach(items => {
+        items.addEventListener("click", toDoToDone)})
 }
 
 function toDoToDone(e){

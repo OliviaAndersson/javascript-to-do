@@ -1,10 +1,10 @@
 $head-font: 'Rubik', sans-serif;
 $bread-font: 'Rubik', sans-serif;
-$blue: #5d7b6f;
-$pink: #f0ecea;
+$button: #9B7874;
+$name: #9B7874;
 $beige:#f0ecea;
-$brown: #785964;
-
+$input: #2B4F3C;
+$border: 2px solid #D33E43;
 
 body{
     margin: 0;
@@ -83,20 +83,18 @@ header{
 
                 #hamburger-menu{
                     display: none;
-                    width: 80%;
+                    width: 100%;
                     height: 100vh;
-                    background-color: white;
+                    background-color: $beige;
                     position: fixed;
                     top: 0;
                     left: 0;
-                    z-index: 50;
+                    z-index: 1000;
                     margin: 0;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: space-evenly;
-                    border-radius: 0px 30px 30px 0px;
-                    border: 2px solid #db7b65;
 
                     #cross{
                         font-size: 30px;
@@ -104,8 +102,8 @@ header{
                     }
 
                     #name{
-                        background-color: $blue;
-                        color: $pink;
+                        background-color: $name;
+                        color: $beige;
                         padding: 5%;
                         margin: 0 auto;
                         
@@ -157,8 +155,8 @@ header{
         background-position: center;
 
         #name{
-            background-color: $blue;
-            color: $pink;
+            background-color: $name;
+            color: $beige;
             width: 350px;
             height: 10vh;
             position: relative;
@@ -206,7 +204,7 @@ main{
 
         #description{
             width: 95%;
-            border: 2px solid #db7b65;
+            border: $border;
             position: relative;
             
             #description-text{
@@ -244,8 +242,8 @@ main{
         width: 95%;
         height: 35vh;
         margin: 0 auto;
-        background-color: $brown;
-        color: $pink;
+        background-color: $input;
+        color: $beige;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -311,8 +309,9 @@ main{
 
         #to-do-list, #done-list{
             margin: 0 auto;
-            width: 80%;
+            width: 75%;
             margin-bottom: 60px;
+            padding-left: 0;
 
             #list-active {
                 border-bottom: 1px solid lightgray;
@@ -357,13 +356,15 @@ main{
                 font-family: $bread-font;
                 font-size: 12pt;
                 height: 5vh;
-                background-color: $pink;
+                background-color: $beige;
             }
         }
+
         a{
             text-decoration: none;
             color: white;
         }
+        
         #plus-container{
             position: relative;
             width: 100%;
@@ -378,7 +379,7 @@ main{
                 margin-right: auto;
                 left: 50%;
                 font-size: 20pt;
-                background-color: $blue;
+                background-color: $button;
                 border-radius: 50%;
                 transform: translate(-50%, -50%);
             }
@@ -409,30 +410,30 @@ main{
             justify-content: space-evenly;
             height: 100%;
 
-            li{
-                display: inline;
-                position: relative;
-                top: 60%;
+                li{
+                    display: inline;
+                    position: relative;
+                    top: 60%;
 
-                a{
-                    text-decoration: none;
-                    color: black;
+                    a{
+                        text-decoration: none;
+                        color: black;
 
+                        
+                    }
+
+                    a:hover{
+                        border-bottom: 2px solid $input;
+                    }
                     
                 }
 
-                a:hover{
-                    border-bottom: 2px solid #255f63;
+                #head-text{
+                    font-family: 'Shadows Into Light', cursive;
+                    font-size: 30pt;
+                    top: 40%;
+                    text-transform: uppercase;
                 }
-                
-            }
-
-            #head-text{
-                font-family: 'Shadows Into Light', cursive;
-                font-size: 30pt;
-                top: 40%;
-                text-transform: uppercase;
-            }
             }
 
             #phone{
@@ -466,12 +467,10 @@ main{
         #input-box{
             width: 80%;
             height: 25vh;
-            margin: 0 auto;
     
             #js{
                 flex-direction: row;
                 justify-content: space-evenly;
-                width: 100%;
     
                 #addToList{
                     width: 70%;
@@ -484,6 +483,7 @@ main{
                 }
             }
         }
+
         #wrappers{
             flex-direction: row;
         
