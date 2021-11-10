@@ -30,7 +30,6 @@ window.onload = function(){
 
 let toDoList = ["Träna", "Städa", "Laga mat"];
 let doneList = [];
-let listNumber = 0;
 
 function createMenu(){
     document.getElementById("hamburger-wrapper").style.display = "block";
